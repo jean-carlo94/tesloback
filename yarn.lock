@@ -1497,6 +1497,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/uuid@npm:^9.0.1":
+  version: 9.0.1
+  resolution: "@types/uuid@npm:9.0.1"
+  checksum: c472b8a77cbeded4bc529220b8611afa39bd64677f507838f8083d8aac8033b1f88cb9ddaa2f8589e0dcd2317291d0f6e1379f82d5ceebd6f74f3b4825288e00
+  languageName: node
+  linkType: hard
+
 "@types/validator@npm:^13.7.10":
   version: 13.7.15
   resolution: "@types/validator@npm:13.7.15"
@@ -6652,6 +6659,7 @@ __metadata:
     "@types/jest": 29.5.0
     "@types/node": 18.15.11
     "@types/supertest": ^2.0.11
+    "@types/uuid": ^9.0.1
     "@typescript-eslint/eslint-plugin": ^5.0.0
     "@typescript-eslint/parser": ^5.0.0
     class-transformer: ^0.5.1
@@ -6669,6 +6677,7 @@ __metadata:
     tsconfig-paths: 4.2.0
     typeorm: ^0.3.15
     typescript: ^4.7.4
+    uuid: ^9.0.0
   languageName: unknown
   linkType: soft
 
