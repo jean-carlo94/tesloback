@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable, InternalServerErrorException, Logger, UnauthorizedException } from '@nestjs/common';
+import { BadRequestException, Get, Injectable, InternalServerErrorException, Logger, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { JwtService } from '@nestjs/jwt';
 import { Repository } from 'typeorm';
@@ -51,10 +51,16 @@ export class AuthService {
     });
 
     if( !user) throw new UnauthorizedException('Credentials are not valid (email)');
-
     if( !bcrypt.compareSync(password, user.password) ) throw new UnauthorizedException('Credentials are not valid (password)');
-    console.log(user);
     
+    return {
+      ...user,
+      token: this.getJwtToken({ id: user.id, email: user.email })
+    };
+  };
+
+  async checkAuthStatus( user: User ){
+  
     return {
       ...user,
       token: this.getJwtToken({ id: user.id, email: user.email })

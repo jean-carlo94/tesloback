@@ -17,12 +17,19 @@ export class AuthController {
   @Post('register')
   createUser(@Body() createAuthDto: CreateUserDto) {
     return this.authService.create(createAuthDto);
-  }
+  };
 
   @Post('login')
   loginUser(@Body() loginUserDto: LoginUserDto){
     return this.authService.login( loginUserDto );
-  }
+  };
+
+  
+  @Get('check-auth-status')
+  @Auth()
+  checkAuthStatus( @GetUser() user: User ){
+    return this.authService.checkAuthStatus( user );
+  };
 
   @Get('private')
   @UseGuards( AuthGuard() )
@@ -42,7 +49,7 @@ export class AuthController {
       rawHeaders,
       headers,
     }
-  }
+  };
 
   //Metadata para sacar los roles no se usa mucho
   //@SetMetadata('roles',['admin','super-user'])
@@ -58,7 +65,7 @@ export class AuthController {
       message: 'Hola mundo',
       user,
     }
-  }
+  };
 
   @Get('private3')
   @Auth( ValideRoles.admin, ValideRoles.superUser )
@@ -70,5 +77,5 @@ export class AuthController {
       message: 'Hola mundo',
       user,
     }
-  }
+  };
 }
