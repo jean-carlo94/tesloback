@@ -1,0 +1,379 @@
+{
+	"info": {
+		"_postman_id": "b719e5b3-5764-4a48-9cd3-670af56e625f",
+		"name": "TesloShop NEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24238115",
+		"_collection_link": "https://interstellar-firefly-835486.postman.co/workspace/My-Workspace~bfee7b11-a739-4225-8ffc-12d570526bd2/collection/24238115-b719e5b3-5764-4a48-9cd3-670af56e625f?action=share&creator=24238115&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Add Products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE4YzJlZjMwLWExYzMtNDYyZS1hZDgyLWE1ZGMzY2VlMjE5ZiIsImVtYWlsIjoiamVhbkBnb29nbGUuY29tIiwiaWF0IjoxNjgzNTYyODMwLCJleHAiOjE2ODM1NzAwMzB9.aev1qkw7ybzgGcwlwLx7LXgM8FzEOEr6fEU8Xrd280w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Jean's saco 56\",\r\n    \"sizes\": [\"SM\", \"M\", \"XL\"],\r\n    \"gender\": \"men\",\r\n    \"price\": 151.99,\r\n    \"tags\": [\"tag1\", \"tag2\"],\r\n    \"images\": [\"image.jpg\",\"image2.jpg\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "offset",
+							"value": "0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "One Proudcts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/products/32bd8c31-a091-4549-8b03-fcdfc88fbb67",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"32bd8c31-a091-4549-8b03-fcdfc88fbb67"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/products/3dfbdb8d-2297-4388-9546-2094f41b75b6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"3dfbdb8d-2297-4388-9546-2094f41b75b6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"price\": 100.99,\r\n    \"title\": \"Tales's saco 10\",\r\n    \"slug\":\"Tales de saco '10\",\r\n    \"tags\": [\"tal1\", \"tal2\"],\r\n    \"images\": [\r\n        \"una.png\",\r\n        \"dos.jpg\",\r\n        \"tres.png\",\r\n        \"cueatro.jpg\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/products/3dfbdb8d-2297-4388-9546-2094f41b75b6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"3dfbdb8d-2297-4388-9546-2094f41b75b6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SEED",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE4YzJlZjMwLWExYzMtNDYyZS1hZDgyLWE1ZGMzY2VlMjE5ZiIsImVtYWlsIjoiamVhbkBnb29nbGUuY29tIiwiaWF0IjoxNjgzNTYxMDg0LCJleHAiOjE2ODM1NjgyODR9._MnMgKT3EGFdmmQqVHfxIbQvF5VO55xj7LoX4WohrKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/seed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"seed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Prod",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/jeanc/Downloads/Hotpot.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/files/product/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"files",
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product Image",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/files/product/1740507-00-A_0_2000.jpg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"files",
+						"product",
+						"1740507-00-A_0_2000.jpg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"Mayra@GoOgLe.cOm\",\r\n    \"password\": \"Mayra@1586\",\r\n    \"fullName\":\"Mayra Alejandra Oliveros\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"auth": {
+					"type": "jwt",
+					"jwt": [
+						{
+							"key": "algorithm",
+							"value": "HS256",
+							"type": "string"
+						},
+						{
+							"key": "isSecretBase64Encoded",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "payload",
+							"value": "{}",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "headerPrefix",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "queryParamKey",
+							"value": "token",
+							"type": "string"
+						},
+						{
+							"key": "header",
+							"value": "{}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"jean@google.com\",\r\n    \"password\":\"Abc123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valide Token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE4YzJlZjMwLWExYzMtNDYyZS1hZDgyLWE1ZGMzY2VlMjE5ZiIsImVtYWlsIjoiamVhbkBnb29nbGUuY29tIiwiaWF0IjoxNjgzNTYwMTQxLCJleHAiOjE2ODM1NjczNDF9.9OybeTXdy43vvqMnWVzwC15S4QlWImzC3HGOh3b5OmE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/auth/private3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"private3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
